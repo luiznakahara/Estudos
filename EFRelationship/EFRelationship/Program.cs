@@ -86,6 +86,33 @@ namespace EFRelationship
             #endregion
 
             Console.ReadKey();
+
+            #region Guid
+
+            var meuUsuario = new Usuario {Id = new Guid(), LastUpdateDate = DateTime.Today};
+            var outroUsuario = new Usuario {Id = new Guid(), LastUpdateDate = DateTime.Today};
+
+            using (AppDataContext db = new AppDataContext())
+            {
+                db.Usuarios.AddRange(new[] {meuUsuario, outroUsuario});
+                db.SaveChanges();
+
+                foreach (var usuario in db.Usuarios)
+                {
+                    Console.WriteLine("{0} = {1}", usuario.Id, usuario.LastUpdateDate);
+                }
+
+                Console.Write(Environment.NewLine);
+
+                var resultado = db.Usuarios.Find(outroUsuario.Id);//exemplo de busca de dados por guid
+                if (resultado != null)
+                    Console.WriteLine(
+                        "{0} - {1}",
+                        resultado.LastUpdateDate,
+                        resultado.Id);
+            }
+            #endregion
+
         }
     }
 }

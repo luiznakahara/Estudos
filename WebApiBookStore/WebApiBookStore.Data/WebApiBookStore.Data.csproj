@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E9F053EC-9D2B-4A70-B4C6-65FF454322EA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{002A1801-1115-43A8-9693-6678606B7606}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EFRelationship</RootNamespace>
-    <AssemblyName>EFRelationship</AssemblyName>
+    <RootNamespace>WebApiBookStore.Data</RootNamespace>
+    <AssemblyName>WebApiBookStore.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -52,16 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContexts\AppDataContext.cs" />
-    <Compile Include="Mapping\AutorMap.cs" />
-    <Compile Include="Mapping\CategoriaMap.cs" />
-    <Compile Include="Mapping\LivroMap.cs" />
-    <Compile Include="Mapping\UsuarioMap.cs" />
-    <Compile Include="Model\Autor.cs" />
-    <Compile Include="Model\Categoria.cs" />
-    <Compile Include="Model\Livro.cs" />
-    <Compile Include="Model\Usuario.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +56,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Anotations.txt" />
+    <Folder Include="DataContexts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

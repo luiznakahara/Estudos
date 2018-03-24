@@ -1,0 +1,6 @@
+﻿FEITO:
+	* Relacionamento entre entidades com virtual, utilização disto para apresentar todo o relacionamento criado no banco
+	* MAPPING, com fluency.
+
+FALTA
+	* Gerar String de Conexão

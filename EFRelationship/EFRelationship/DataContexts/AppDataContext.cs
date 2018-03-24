@@ -1,5 +1,6 @@
 ﻿using EFRelationship.Model;
 using System.Data.Entity;
+using EFRelationship.Mapping;
 
 namespace EFRelationship.DataContexts
 {
@@ -13,6 +14,15 @@ namespace EFRelationship.DataContexts
             : base("MinhaConnectionString")
         {
             Database.SetInitializer<AppDataContext>(new AppDataContextInitializer());
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new AutorMap());
+            modelBuilder.Configurations.Add(new LivroMap());
+            modelBuilder.Configurations.Add(new CategoriaMap());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 

@@ -1,5 +1,5 @@
 module tsbr{
-    interface ISubscriber{
+    export interface ISubscriber{
         isSubscriber: boolean;
     }
 }
